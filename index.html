@@ -1,74 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="mgfjxxiexiaolong" />
+
+
+    
+    
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
 
 </head>
-
 <body>
   <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">mgfjxxiexiaolong</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:mgfjxxiexiaolong@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/mgfjxxiexiaolong" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/8397b27bd49a" title="简书"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">关于我</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">mgfjxxiexiaolong</a></h1>
       </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">mgfjxxiexiaolong</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:mgfjxxiexiaolong@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/mgfjxxiexiaolong" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/8397b27bd49a" title="简书"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
   
     <article id="post-UIView的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/14/UIView的生命周期/" class="article-date">
-  <time datetime="2017-01-14T14:05:40.000Z" itemprop="datePublished">2017-01-14</time>
+  
+    <div class="article-meta">
+      <a href="/2017/01/14/UIView的生命周期/" class="article-date">
+      <time datetime="2017-01-14T15:23:39.000Z" itemprop="datePublished">2017-01-14</time>
 </a>
-    
-  </div>
+
+ 
+    <a href="/2017/01/14/UIView的生命周期/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/01/14/UIView的生命周期/"></span>
+        
+    </a>
+
+    </div>
+  
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -80,67 +298,68 @@
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+          
+              <blockquote>
 <p>探寻UIView的生命周期。我们知道<code>view</code>的创建有<code>init(或new)</code>的方法，销毁时会自动执行<code>dealloc</code>方法，但是UIView的生命周期到底是怎样的呢？我们一步一步来。</p>
 </blockquote>
-<p>首先新建一个项目并创建一个<code>TestView</code>继承自<code>UIView</code>：<br><img src="http://upload-images.jianshu.io/upload_images/997116-649257745a2750a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建TestView"><br>再创建<code>TestViewController</code>继承自UIViewController，用于承载<code>TestView</code>(方便后面测试view销毁时间)：<br><img src="http://upload-images.jianshu.io/upload_images/997116-79f8a42e71ee9463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建TestViewController"></p>
-<p>在<code>Main.storyboard</code>中给默认的控制器<code>ViewController</code>添加导航：<br><img src="http://upload-images.jianshu.io/upload_images/997116-8b05367f2ecf86e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="给ViewController添加导航"><br>在<code>ViewController.m</code>中添加如下代码用于跳转操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad &#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    </div><div class="line">    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];</div><div class="line">    btn.frame = CGRectMake(100, 100, 100, 100);</div><div class="line">    btn.backgroundColor = [UIColor colorWithRed:0.489 green:0.548 blue:0.898 alpha:1.000];</div><div class="line">    [btn setTitle:@&quot;push&quot; forState:UIControlStateNormal];</div><div class="line">    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];</div><div class="line">    [btn addTarget:self action:@selector(pushTestViewVC:) forControlEvents:UIControlEventTouchUpInside];</div><div class="line">    </div><div class="line">    [self.view addSubview:btn];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)pushTestViewVC:(UIButton *)sender&#123;</div><div class="line">    TestViewController *vc = [[TestViewController alloc] init];</div><div class="line">    [self.navigationController pushViewController:vc animated:YES];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在<code>TestViewController.m</code>中添加如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    self.view.backgroundColor = [UIColor lightGrayColor];</div><div class="line">    </div><div class="line">    TestView *view = [[TestView alloc] init];</div><div class="line">    view.frame = CGRectMake(8, 100, self.view.bounds.size.width - 8*2, 250);</div><div class="line">    view.backgroundColor = [UIColor colorWithRed:0.101 green:0.502 blue:0.427 alpha:1.000];</div><div class="line">    [self.view addSubview:view];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>ok,到这儿准备工作完成。运行一下：<br><img src="http://upload-images.jianshu.io/upload_images/997116-66739320b69cab9a.gif?imageMogr2/auto-orient/strip" alt="效果图"></p>
-</blockquote>
-<p> 查看<code>UIView</code>api，常用的加载时机大概如下：<br><code>- (void)layoutSubviews</code><br><code>- (void)didAddSubview:(UIView *)subview;</code><br><code>- (void)willRemoveSubview:(UIView *)subview;</code><br><code>- (void)willMoveToSuperview:(nullable UIView *)newSuperview;</code><br><code>- (void)didMoveToSuperview;</code><br><code>- (void)willMoveToWindow:(nullable UIWindow *)newWindow;</code><br><code>- (void)didMoveToWindow;</code><br><code>- (void)removeFromSuperview</code><br><code>- (void)dealloc</code><br>一一在<code>TestView.m</code>中实现:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">#import &quot;TestView.h&quot;</div><div class="line"></div><div class="line">@interface TestView ()&#123;</div><div class="line">    NSInteger count;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation TestView</div><div class="line"></div><div class="line">- (instancetype)init&#123;</div><div class="line">    self = [super init];</div><div class="line">    if (self) &#123;</div><div class="line">        </div><div class="line">        count = 0;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)layoutSubviews&#123;</div><div class="line">    [super layoutSubviews];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)didAddSubview:(UIView *)subview&#123;</div><div class="line">    [super didAddSubview:subview];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)willRemoveSubview:(UIView *)subview&#123;</div><div class="line">    [super willRemoveSubview:subview];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)willMoveToSuperview:(nullable UIView *)newSuperview&#123;</div><div class="line">    [super willMoveToSuperview:newSuperview];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)didMoveToSuperview&#123;</div><div class="line">    [super didMoveToSuperview];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)willMoveToWindow:(nullable UIWindow *)newWindow&#123;</div><div class="line">    [super willMoveToWindow:newWindow];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)didMoveToWindow&#123;</div><div class="line">    [super didMoveToWindow];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)removeFromSuperview&#123;</div><div class="line">    [super removeFromSuperview];</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)dealloc&#123;</div><div class="line">    count++;</div><div class="line">    NSLog(@&quot;%@ ==&gt; %ld&quot;,NSStringFromSelector(_cmd),count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure></p>
-<p><code>*_cmd表示当前方法的SEL，既执行该方法时打印方法名*</code></p>
-<blockquote>
-<p>运行，点<code>push</code>，控制台打印如下：</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/997116-f3bc2b12309011d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="push时打印"></p>
-<blockquote>
-<p>然后点击navigation的<code>back</code>按钮：</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/997116-62c8b06c6b20f6a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="pop时打印"></p>
-<blockquote>
-<p>我们发现<br><code>- (void)didAddSubview:(UIView *)subview;</code><br><code>- (void)willRemoveSubview:(UIView *)subview;</code><br>这两个是需要有子视图才能执行，暂时不做讨论。<br>可以看出上面方法中只会执行一次的方法有<code>removeFromSuperview</code>、<code>dealloc</code>两个方法(<code>layoutSubviews</code>在子视图布局变动时会多次调用)，所以可以在这两个方法中执行释放内存等操作(e.g:移除观察者，定时器等)。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>OK，下面我们讨论关于<code>subView</code>的几个方法，首先在<code>TestViewController.m</code>中实现点击按钮给<code>testView</code>添加子视图的功能：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">#import &quot;TestViewController.h&quot;</div><div class="line">#import &quot;TestView.h&quot;</div><div class="line"></div><div class="line">@interface TestViewController ()&#123;</div><div class="line">    </div><div class="line">    TestView *testView;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation TestViewController</div><div class="line">- (void)viewDidLoad&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    self.view.backgroundColor = [UIColor lightGrayColor];</div><div class="line">    </div><div class="line">    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@&quot;addSubView&quot; style:UIBarButtonItemStylePlain target:self action:@selector(addTestViewSubView)];</div><div class="line">    self.navigationItem.rightBarButtonItem = item;</div><div class="line">    </div><div class="line">    TestView *view = [[TestView alloc] init];</div><div class="line">    view.frame = CGRectMake(8, 100, self.view.bounds.size.width - 8*2, 250);</div><div class="line">    view.backgroundColor = [UIColor colorWithRed:0.101 green:0.502 blue:0.427 alpha:1.000];</div><div class="line">    [self.view addSubview:view];</div><div class="line">    testView = view;</div><div class="line">    </div><div class="line">&#125;</div><div class="line">- (void)addTestViewSubView&#123;   </div><div class="line">    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];</div><div class="line">    view.backgroundColor = [UIColor lightGrayColor];</div><div class="line">    view.tag = 100;</div><div class="line">    [testView addSubview:view];</div><div class="line">    </div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
-<blockquote>
-<p>点击<code>push</code>后点击按钮添加子视图：<br><img src="http://upload-images.jianshu.io/upload_images/997116-509fe8e20dae8d61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加子视图"><br>可见<code>didAddSubview</code>和<code>layoutSubviews</code>都调用了，那我们<code>pop</code>回去：<br><img src="http://upload-images.jianshu.io/upload_images/997116-1bbb60672a8d8fbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br><code>willRemoveSubview</code>是在<code>dealloc</code>后面执行的，通过断点我们发现确实是最后执行的。而且如果有多个子视图，<code>willRemoveSubview</code>会循环执行，直到移除所有子视图。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>以上执行顺序比较清楚，主要是了解UIView的各个时机便于我们进行相关操作。<br>关于：<br><code>- (void)willMoveToSuperview:(nullable UIView *)newSuperview;</code><br><code>- (void)willMoveToWindow:(nullable UIWindow *)newWindow;</code><br>这俩个方法可以根据参数是否为<code>nil</code>判断是创建操作还是销毁操作，<em><code>nil</code>则为销毁，反之，则为创建；</em><br><code>- (void)didMoveToSuperview;</code><br>这个方法可以根据<code>self.superview</code>的值判定，<em><code>nil</code>则为销毁，反之，则为创建。</em><br><code>- (void)didMoveToWindow;</code><br>这个方法可以根据<code>self.superview</code>的值判定，<em><code>nil</code>则为创建，反之，则为销毁。</em>(<strong>注意这个方法和上面的是相反的</strong>)</p>
-</blockquote>
-<hr>
-<p><em>如有错误的地方，麻烦指正。</em></p>
-
+<p>首先新建一个项目并创建一个<code>TestView</code>继承自<code>UIView</code>：<br><img src="http://upload-images.jianshu.io/upload_images/997116-649257745a2750a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建TestView"></p>
+<p>再创建<code>TestViewController</code>继承自UIViewController，用于承载<code>TestView</code>(方便后面测试view销毁时间)：<br><img src="http://upload-images.jianshu.io/upload_images/997116-79f8a42e71ee9463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建TestViewController"><br>
+          
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/14/UIView的生命周期/" data-id="cixy5adcs0000eqc9zii2eh4f" class="article-share-link">Partager</a>
+    
+    <div class="article-info article-info-index">
       
       
-    </footer>
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2017/01/14/UIView的生命周期/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
 </article>
 
 
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/14/hello-world/" class="article-date">
-  <time datetime="2017-01-14T14:05:40.000Z" itemprop="datePublished">2017-01-14</time>
+  
+    <div class="article-meta">
+      <a href="/2017/01/14/hello-world/" class="article-date">
+      <time datetime="2017-01-14T14:05:40.000Z" itemprop="datePublished">2017-01-14</time>
 </a>
-    
-  </div>
+
+ 
+    <a href="/2017/01/14/hello-world/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/01/14/hello-world/"></span>
+        
+    </a>
+
+    </div>
+  
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -152,105 +371,151 @@
   
 
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+          
+              <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a><br>
+          
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/14/hello-world/" data-id="cixy5adcx0001eqc9xtfi164v" class="article-share-link">Partager</a>
+    
+    <div class="article-info article-info-index">
       
       
-    </footer>
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2017/01/14/hello-world/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
 </article>
 
 
-  
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
-    </div>
-  </div>
+
+
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/01/14/UIView的生命周期/">UIView的生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/14/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
   
-</aside>
-        
-      </div>
+</div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 mgfjxxiexiaolong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-  </div>
 </footer>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+        <script id="dsq-count-scr" src="//null.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
+     
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   </div>
 </body>
 </html>
