@@ -3,21 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Shell 使用小技巧 | mgfjx</title>
+    <title>fuck shit | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.
-2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#123;path: -1&amp;#125;echo final : $finalif [[ &quot;$&amp;#123;final&amp;#125">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Shell 使用小技巧">
-<meta property="og:url" content="http://yoursite.com/2017/01/18/Shell使用小技巧/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="fuck shit">
+<meta property="og:url" content="http://yoursite.com/2017/01/23/fuck-shit/index.html">
 <meta property="og:site_name" content="mgfjx">
-<meta property="og:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.
-2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#123;path: -1&amp;#125;echo final : $finalif [[ &quot;$&amp;#123;final&amp;#125">
-<meta property="og:updated_time" content="2017-01-23T02:21:08.000Z">
+<meta property="og:updated_time" content="2017-01-23T06:31:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell 使用小技巧">
-<meta name="twitter:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.
-2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#123;path: -1&amp;#125;echo final : $finalif [[ &quot;$&amp;#123;final&amp;#125">
+<meta name="twitter:title" content="fuck shit">
     
 
     
@@ -214,7 +208,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-Shell使用小技巧" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-fuck-shit" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -222,7 +216,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Shell 使用小技巧
+            fuck shit
         </h1>
     
 
@@ -231,24 +225,14 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/01/18/Shell使用小技巧/">
-            <time datetime="2017-01-18T07:28:04.000Z" itemprop="datePublished">2017-01-18</time>
+        <a href="/2017/01/23/fuck-shit/">
+            <time datetime="2017-01-23T03:20:17.000Z" itemprop="datePublished">2017-01-23</time>
         </a>
     </div>
 
 
                         
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Shell/">Shell</a>
-    </div>
-
                         
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/shell/">shell</a>
-    </div>
-
                     </div>
                 
             </header>
@@ -257,10 +241,9 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h5 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h5><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.</p>
-<h5 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h5><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>用法：<code>bash script.sh /directory/path</code></p>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=28285910&auto=1&height=66"></iframe>
+
+
 
         
         </div>
@@ -271,7 +254,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="ciy9ptr910000snca6ddk8pe6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="ciy9ptr9c0005sncafl2gktwh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -339,7 +322,7 @@
 
             
     
-        <a href="http://yoursite.com/2017/01/18/Shell使用小技巧/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/01/18/Shell使用小技巧/">评论</a>
+        <a href="http://yoursite.com/2017/01/23/fuck-shit/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/01/23/fuck-shit/">评论</a>
     
 
         </footer>
@@ -348,19 +331,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/01/23/fuck-shit/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    fuck shit
-                
-            </div>
-        </a>
     
-    
-        <a href="/2017/01/14/UIView的生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/01/18/Shell使用小技巧/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">UIView的生命周期</div>
+            <div class="article-nav-title">Shell 使用小技巧</div>
         </a>
     
 </nav>
@@ -374,7 +348,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2017/01/18/Shell使用小技巧/" data-title="Shell 使用小技巧" data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/"></div>
+    <div class="ds-thread" data-thread-key="2017/01/23/fuck-shit/" data-title="fuck shit" data-url="http://yoursite.com/2017/01/23/fuck-shit/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
