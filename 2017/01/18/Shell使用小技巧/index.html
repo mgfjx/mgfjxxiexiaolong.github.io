@@ -5,16 +5,19 @@
     
     <title>Shell 使用小技巧 | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.">
+    <meta name="description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.
+2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#123;path: -1&amp;#125;echo final : $finalif [[ &quot;$&amp;#123;final&amp;#125">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell 使用小技巧">
 <meta property="og:url" content="http://yoursite.com/2017/01/18/Shell使用小技巧/index.html">
 <meta property="og:site_name" content="mgfjx">
-<meta property="og:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.">
-<meta property="og:updated_time" content="2017-01-19T01:07:58.000Z">
+<meta property="og:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.
+2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#123;path: -1&amp;#125;echo final : $finalif [[ &quot;$&amp;#123;final&amp;#125">
+<meta property="og:updated_time" content="2017-01-23T02:21:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell 使用小技巧">
-<meta name="twitter:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.">
+<meta name="twitter:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.
+2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#123;path: -1&amp;#125;echo final : $finalif [[ &quot;$&amp;#123;final&amp;#125">
     
 
     
@@ -255,6 +258,9 @@
         
             
             <h5 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h5><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.</p>
+<h5 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h5><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>用法：<code>bash script.sh /directory/path</code></p>
 
         
         </div>
@@ -265,7 +271,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="ciy2minug0001luca6bf4yjsq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="ciy9gw4p70001z1caoi0pqxai" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
