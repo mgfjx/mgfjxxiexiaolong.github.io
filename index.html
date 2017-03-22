@@ -155,11 +155,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                3
+                6
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                2
+                4
                 <span>标签</span>
             </div>
         </div>
@@ -208,6 +208,398 @@
 
             
             <section id="main">
+    <article id="post-React-Native笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/03/22/React-Native笔记/">React-Native笔记</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/22/React-Native笔记/">
+            <time datetime="2017-03-22T00:24:39.000Z" itemprop="datePublished">2017-03-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/React-Native/">React Native</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="1、RN调用OC传参并调用方法"><a href="#1、RN调用OC传参并调用方法" class="headerlink" title="1、RN调用OC传参并调用方法"></a>1、RN调用OC传参并调用方法</h4><p>1)建一个类继承自<code>NSObject</code>的类<br>首先要导入<code>#import &quot;RCTBridgeModule.h&quot;</code>头文件，并遵守<code>RCTBridgeModule</code>协议,然后在实现类中：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"RCTBridgeModule.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">MineRNBridgeModule</span> : <span class="title">RCTEventEmitter</span>&lt;<span class="title">RCTBridgeModule</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"MineRNBridgeModule.h"</span></span></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">MineRNBridgeModule</span></span></div><div class="line"></div><div class="line">RCT_EXPORT_MODULE(MineRNBridgeModule);</div><div class="line">RCT_EXPORT_METHOD(RunOCMethod:(<span class="built_in">NSDictionary</span> *)dictionary)&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"接收到RN传过来的数据为:%@"</span>,dictionary);</div><div class="line">    <span class="comment">//可以在此添加OC代码操作, RunOCMethod为方法名，后面的为参数</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>2)RN中实现代码:<br>首先要引入<code>NativeModules</code>组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> RNBridgeModule = NativeModules.MineRNBridgeModule;</div><div class="line"><span class="comment">//在合适位置调用即可</span></div><div class="line">RNBridgeModule.RNInvokeOCCallBack(&#123;<span class="string">'name'</span>:<span class="string">'jiangqq'</span>,<span class="string">'description'</span>:<span class="string">'http://www.lcode.org'</span>&#125;);</div></pre></td></tr></table></figure>
+<h4 id="2、OC向RN传参并调用方法"><a href="#2、OC向RN传参并调用方法" class="headerlink" title="2、OC向RN传参并调用方法"></a>2、OC向RN传参并调用方法</h4><p>参考: <a href="http://blog.csdn.net/pz789as/article/details/52837853#" target="_blank" rel="external">React-Native新版本RCTEventEmitter的使用（从原生发送消息到JS）</a><br><strong>1)</strong>自定义的模块类头文件要继承自<code>RCTEventEmitter</code><br><code>@interface ChivoxISE : RCTEventEmitter&lt;RCTBridgeModule&gt;</code><br><strong>2)</strong>然后要导出你所有的方法名字</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">NSArray</span>&lt;<span class="built_in">NSString</span> *&gt; *)supportedEvents  </div><div class="line">&#123;  </div><div class="line">  <span class="keyword">return</span> @[<span class="string">@"iseCallback"</span>, <span class="string">@"iseVolume"</span>, <span class="string">@"playCallback"</span>];<span class="comment">//有几个就写几个  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>3)</strong>分别实现你导出的所有方法，里面都使用<code>sendEventWithName</code>方法即可</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)iseCallback:(<span class="built_in">NSString</span>*)code result:(<span class="built_in">NSString</span>*) result  </div><div class="line">&#123;  </div><div class="line">  [<span class="keyword">self</span> sendEventWithName:<span class="string">@"iseCallback"</span>  </div><div class="line">                     body:@&#123;  </div><div class="line">                            <span class="string">@"code"</span>: code,  </div><div class="line">                            <span class="string">@"result"</span>: result,  </div><div class="line">                            &#125;];  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>4)</strong>最后JS端调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;  </div><div class="line">  ...  </div><div class="line">  NativeModules,  </div><div class="line">  NativeEventEmitter,  <span class="comment">//导入NativeEventEmitter模块  </span></div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;  </div><div class="line">  </div><div class="line"><span class="keyword">var</span> ChivoxISE = NativeModules.ChivoxISE;  </div><div class="line"><span class="keyword">const</span> myNativeEvt = <span class="keyword">new</span> NativeEventEmitter(ChivoxISE);  <span class="comment">//创建自定义事件接口  </span></div><div class="line">  </div><div class="line"><span class="comment">//在组件中使用  </span></div><div class="line">  componentWillMount() &#123;  </div><div class="line">    <span class="keyword">this</span>.listener = myNativeEvt.addListener(<span class="string">'iseCallback'</span>, <span class="keyword">this</span>.iseCallback.bind(<span class="keyword">this</span>));  <span class="comment">//对应了原生端的名字  </span></div><div class="line">  &#125;  </div><div class="line">  componentWillUnmount() &#123;  </div><div class="line">    <span class="keyword">this</span>.listener &amp;&amp; <span class="keyword">this</span>.listener.remove();  <span class="comment">//记得remove哦  </span></div><div class="line">    <span class="keyword">this</span>.listener = <span class="literal">null</span>;  </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cj0k88mad000imkcao9e12snq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/03/22/React-Native笔记/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/03/22/React-Native笔记/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-PIL-Python-Image-Library-详解" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/03/10/PIL-Python-Image-Library-详解/">PIL(Python Image Library)详解</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/03/10/PIL-Python-Image-Library-详解/">
+            <time datetime="2017-03-10T03:10:08.000Z" itemprop="datePublished">2017-03-10</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h5 id="1、打开、旋转、显示-默认图片浏览器-图片"><a href="#1、打开、旋转、显示-默认图片浏览器-图片" class="headerlink" title="1、打开、旋转、显示(默认图片浏览器)图片"></a>1、打开、旋转、显示(默认图片浏览器)图片</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line">im = Image.open(<span class="string">"bride.jpg"</span>)</div><div class="line">im.rotate(<span class="number">45</span>).show()</div></pre></td></tr></table></figure>
+<h5 id="2、创建缩略图"><a href="#2、创建缩略图" class="headerlink" title="2、创建缩略图"></a>2、创建缩略图</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> glob, os</div><div class="line"></div><div class="line">size = <span class="number">128</span>, <span class="number">128</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> infile <span class="keyword">in</span> glob.glob(<span class="string">"*.jpg"</span>):</div><div class="line">    file, ext = os.path.splitext(infile)</div><div class="line">    im = Image.open(infile)</div><div class="line">    im.thumbnail(size, Image.ANTIALIAS)</div><div class="line">    im.save(file + <span class="string">".thumbnail"</span>, <span class="string">"JPEG"</span>)</div></pre></td></tr></table></figure>
+<p>为当前文件夹下所有<code>JPG</code>图片创建缩略图并存储</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cj0k860ah0003mkca1s63t4ug" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-swift笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/02/24/swift笔记/">swift笔记</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/02/24/swift笔记/">
+            <time datetime="2017-02-24T07:29:22.000Z" itemprop="datePublished">2017-02-24</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h5 id="1-打印方法名称"><a href="#1-打印方法名称" class="headerlink" title="1.打印方法名称"></a>1.打印方法名称</h5><p><code>print(#function);</code> <em>swift3.0 or later</em>(之前为<code>__FUNCTION__</code>)</p>
+<hr>
+<h5 id="2-swift使用block-闭包-回调"><a href="#2-swift使用block-闭包-回调" class="headerlink" title="2.swift使用block(闭包)回调"></a>2.swift使用block(闭包)回调</h5><p>先声明闭包<code>typealias ScanFinish = (_ finish:Bool)-&gt;Void;</code><br>再设置闭包函数为属性<code>var block:ScanFinish?;</code>,然后在初始化是赋值闭包属性就行了</p>
+<hr>
+<h5 id="3-escaping-逃逸闭包"><a href="#3-escaping-逃逸闭包" class="headerlink" title="3.@escaping 逃逸闭包"></a>3.@escaping 逃逸闭包</h5><p>swift3.0总取消了<code>@noescapting</code>(非逃逸闭包)，改为了<code>@escaping</code>(逃逸闭包)，区别：即闭包在<code>函数内</code>执行为非逃逸闭包，在<code>函数外</code>为逃逸闭包，在函数外执行需要<code>@escaping</code>修饰，例如：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typealias</span> <span class="type">ScanFinish</span> = (<span class="number">_</span> finish:<span class="type">Bool</span>)-&gt;<span class="type">Void</span>;</div><div class="line"><span class="keyword">init</span>(scanFinish: @escaping <span class="type">ScanFinish</span>) &#123;</div><div class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(nibName: <span class="literal">nil</span>, bundle: <span class="literal">nil</span>);</div><div class="line">        <span class="keyword">self</span>.block = scanFinish;<span class="comment">//逃逸闭包</span></div><div class="line">        scanFinish(ture);<span class="comment">//非逃逸闭包</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p></p>
+            <p class="article-more-link">
+                <a href="/2017/02/24/swift笔记/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2017/02/24/swift笔记/" data-id="cj0k860au0009mkca7atag0wt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/02/24/swift笔记/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/02/24/swift笔记/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-fuck-shit" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -251,7 +643,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="ciy9romfn0003r7ca1rgw4etf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="cj0k860ar0008mkcaymatk8mh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -371,7 +763,7 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h5 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h5><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.</p>
+            <p><h5 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h5><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.<br>例如:<code>NSLog(@&quot;%@&quot;,NSStringFromSelector(_cmd));</code>打印当前方法名</p>
 <h5 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h5><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure></p>
             <p class="article-more-link">
                 <a href="/2017/01/18/Shell使用小技巧/#more">查看更多</a>
@@ -385,7 +777,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="ciy9romfi0001r7cad58qpvc9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="cj0k860ac0001mkcaueehuaze" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -522,7 +914,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/14/UIView的生命周期/" data-id="ciy9romfx0007r7ca6w4duk5q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/14/UIView的生命周期/" data-id="cj0k860ap0007mkcau6jwsohb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -612,6 +1004,63 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/03/22/React-Native笔记/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/22/React-Native笔记/" class="title">React-Native笔记</a></p>
+                            <p class="item-date"><time datetime="2017-03-22T00:24:39.000Z" itemprop="datePublished">2017-03-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/10/PIL-Python-Image-Library-详解/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/10/PIL-Python-Image-Library-详解/" class="title">PIL(Python Image Library)详解</a></p>
+                            <p class="item-date"><time datetime="2017-03-10T03:10:08.000Z" itemprop="datePublished">2017-03-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/02/24/swift笔记/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/02/24/swift笔记/" class="title">swift笔记</a></p>
+                            <p class="item-date"><time datetime="2017-02-24T07:29:22.000Z" itemprop="datePublished">2017-02-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/01/23/fuck-shit/" class="thumbnail">
     
     
@@ -647,25 +1096,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/01/14/UIView的生命周期/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/iOS/">iOS</a></p>
-                            <p class="item-title"><a href="/2017/01/14/UIView的生命周期/" class="title">UIView的生命周期</a></p>
-                            <p class="item-date"><time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -684,7 +1114,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -693,7 +1123,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -702,7 +1132,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
+            <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/React-Native/" style="font-size: 10px;">React Native</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a>
         </div>
     </div>
 
