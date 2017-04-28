@@ -6,18 +6,18 @@
     <title>Shell 使用小技巧 | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.例如:NSLog(@&amp;quot;%@&amp;quot;,NSStringFromSelector(_cmd));打印当前方法名
-2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#1">
+waring:如果遇到sed: RE error: illegal byte sequence, 这是因为在识别含有多字节编码字符时遇到了解析冲突问题, 请在终端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shell 使用小技巧">
 <meta property="og:url" content="http://yoursite.com/2017/01/18/Shell使用小技巧/index.html">
 <meta property="og:site_name" content="mgfjx">
 <meta property="og:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.例如:NSLog(@&amp;quot;%@&amp;quot;,NSStringFromSelector(_cmd));打印当前方法名
-2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#1">
-<meta property="og:updated_time" content="2017-03-01T09:30:23.000Z">
+waring:如果遇到sed: RE error: illegal byte sequence, 这是因为在识别含有多字节编码字符时遇到了解析冲突问题, 请在终端">
+<meta property="og:updated_time" content="2017-04-28T06:38:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell 使用小技巧">
 <meta name="twitter:description" content="1、sed &amp;#39;s/}/text}/g&amp;#39; file:在文件file文件中的所有}之前添加text文本.例如:NSLog(@&amp;quot;%@&amp;quot;,NSStringFromSelector(_cmd));打印当前方法名
-2、将文件夹下的所有文件或文件夹按字母分类123456789101112131415161718#! /usr/bin/bashpath=$1final=$&amp;#1">
+waring:如果遇到sed: RE error: illegal byte sequence, 这是因为在识别含有多字节编码字符时遇到了解析冲突问题, 请在终端">
     
 
     
@@ -257,11 +257,14 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h5 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h5><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.<br>例如:<code>NSLog(@&quot;%@&quot;,NSStringFromSelector(_cmd));</code>打印当前方法名</p>
-<h5 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h5><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure>
+            <h4 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h4><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.<br>例如:<code>NSLog(@&quot;%@&quot;,NSStringFromSelector(_cmd));</code>打印当前方法名</p>
+<p><code>waring</code>:如果遇到<code>sed: RE error: illegal byte sequence</code>, 这是因为在识别含有多字节编码字符时遇到了解析冲突问题, 请在终端执行<code>export LC_COLLATE=&#39;C&#39;</code>和<code>export LC_CTYPE=&#39;C&#39;</code></p>
+<h4 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h4><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>用法：<code>bash script.sh /directory/path</code></p>
-<h5 id="3、批量查找并拷贝到指定目录"><a href="#3、批量查找并拷贝到指定目录" class="headerlink" title="3、批量查找并拷贝到指定目录"></a>3、批量查找并拷贝到指定目录</h5><p><code>find path -name &quot;*.gif&quot;| xargs -I {} cp {} targetPath</code></p>
+<h4 id="3、find技巧"><a href="#3、find技巧" class="headerlink" title="3、find技巧"></a>3、<code>find</code>技巧</h4><p>1.批量查找并拷贝到指定目录：<br><code>find path -name &quot;*.gif&quot;| xargs -I {} cp {} targetPath</code></p>
+<p>2.查找指定路径下所有文件并忽略隐藏文件及隐藏文件夹下的所有文件：<br><code>find &lt;dir&gt; -path &quot;*/.*&quot; -prune -o -print</code></p>
+<p>3.查找指定路径下指定文件并忽略隐藏文件及隐藏文件夹下的所有文件：<br><code>find $PWD -path &#39;*/.*&#39; -prune -o \( -name &#39;*.py&#39; -o -name &quot;*.sh&quot; \) -type f -print</code></p>
 
         
         </div>
@@ -272,7 +275,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="cj0k860ac0001mkcaueehuaze" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="cj21gwvdw0005y9cac871zxux" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

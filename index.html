@@ -266,7 +266,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cj0k88mad000imkcao9e12snq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cj21gwvdi0000y9cav1fq1ryx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -395,7 +395,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cj0k860ah0003mkca1s63t4ug" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cj21gwvdo0002y9cabk4jivqm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -522,7 +522,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/02/24/swift笔记/" data-id="cj0k860au0009mkca7atag0wt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/02/24/swift笔记/" data-id="cj21gwve4000by9ca5hf03joi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -643,7 +643,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="cj0k860ar0008mkcaymatk8mh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="cj21gwve00008y9ca13gxl9fz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -763,8 +763,9 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h5 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h5><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.<br>例如:<code>NSLog(@&quot;%@&quot;,NSStringFromSelector(_cmd));</code>打印当前方法名</p>
-<h5 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h5><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure></p>
+            <p><h4 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h4><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.<br>例如:<code>NSLog(@&quot;%@&quot;,NSStringFromSelector(_cmd));</code>打印当前方法名</p>
+<p><code>waring</code>:如果遇到<code>sed: RE error: illegal byte sequence</code>, 这是因为在识别含有多字节编码字符时遇到了解析冲突问题, 请在终端执行<code>export LC_COLLATE=&#39;C&#39;</code>和<code>export LC_CTYPE=&#39;C&#39;</code></p>
+<h4 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h4><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure></p>
             <p class="article-more-link">
                 <a href="/2017/01/18/Shell使用小技巧/#more">查看更多</a>
             </p>
@@ -777,7 +778,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="cj0k860ac0001mkcaueehuaze" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="cj21gwvdw0005y9cac871zxux" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -914,7 +915,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/14/UIView的生命周期/" data-id="cj0k860ap0007mkcau6jwsohb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/14/UIView的生命周期/" data-id="cj21gwvdy0006y9cagoygx5i2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
