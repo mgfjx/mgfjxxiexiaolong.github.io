@@ -3,14 +3,30 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2017/2 | mgfjx</title>
+    <title>shell-tr命令 | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="mgfjx">
-<meta property="og:url" content="http://yoursite.com/archives/2017/02/index.html">
+    <meta name="description" content="作用：tr 命令用于转换字符、删除字符和压缩重复的字符。它从标准输入读取数据并将结果输出到标准输出。
+
+
+
+语法：tr [OPTION]... SET1 [SET2].如果参数 SET1 和 SET2 同时制定，并没有指定 -d 选项，那么 tr 命令将把 SET1 中指定的每个字符替换为 SET2 中相同位置的字符。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell-tr命令">
+<meta property="og:url" content="http://yoursite.com/2017/05/02/shell-tr命令/index.html">
 <meta property="og:site_name" content="mgfjx">
+<meta property="og:description" content="作用：tr 命令用于转换字符、删除字符和压缩重复的字符。它从标准输入读取数据并将结果输出到标准输出。
+
+
+
+语法：tr [OPTION]... SET1 [SET2].如果参数 SET1 和 SET2 同时制定，并没有指定 -d 选项，那么 tr 命令将把 SET1 中指定的每个字符替换为 SET2 中相同位置的字符。">
+<meta property="og:updated_time" content="2017-05-02T01:31:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mgfjx">
+<meta name="twitter:title" content="shell-tr命令">
+<meta name="twitter:description" content="作用：tr 命令用于转换字符、删除字符和压缩重复的字符。它从标准输入读取数据并将结果输出到标准输出。
+
+
+
+语法：tr [OPTION]... SET1 [SET2].如果参数 SET1 和 SET2 同时制定，并没有指定 -d 选项，那么 tr 命令将把 SET1 中指定的每个字符替换为 SET2 中相同位置的字符。">
     
 
     
@@ -207,40 +223,213 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main"><article id="post-shell-tr命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/02/24/swift笔记/">swift笔记</a>
+        <h1 class="article-title" itemprop="name">
+            shell-tr命令
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/24/swift笔记/">
-            <time datetime="2017-02-24T07:29:22.000Z" itemprop="datePublished">2017-02-24</time>
+        <a href="/2017/05/02/shell-tr命令/">
+            <time datetime="2017-05-02T00:46:29.000Z" itemprop="datePublished">2017-05-02</time>
         </a>
     </div>
 
 
-                    
-                    
-                </div>
-            </div>
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Shell/">Shell</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/shell/">shell</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <blockquote>
+<p>作用：tr 命令用于转换字符、删除字符和压缩重复的字符。它从标准输入读取数据并将结果输出到标准输出。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>语法：<code>tr [OPTION]... SET1 [SET2]</code>.<br>如果参数 SET1 和 SET2 同时制定，并没有指定 -d 选项，那么 tr 命令将把 SET1 中指定的每个字符替换为 SET2 中相同位置的字符。<br><a id="more"></a></p>
+<hr>
+<p>####示例：<br>1.将输出文本转换为大写：<code>cat filename | tr [:lower:] [:upper:]</code>，还可以这样写：<code>cat filename | tr a-z A-Z</code>.<br><br>2.转换一个文件的内容，并将转换的结果输出到另一个文件：<br><code>tr &#39;originStr&#39; &#39;replaceStr&#39; &lt; originFileName &gt; newFileName</code>.<br><br>3.使用<code>-d</code>选项删除指定字符：<br><code>echo &quot;My Name Is Toby&quot; | tr -d a-z</code>,删除所有小写字母.<br></p>
+</blockquote>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://yoursite.com/2017/05/02/shell-tr命令/" data-id="cj2fq7i1b000cjqcai9cs5mri" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/05/02/shell-tr命令/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/05/02/shell-tr命令/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/05/08/Xcode-tips/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Xcode tips
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/03/22/React-Native笔记/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">React-Native笔记</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/05/02/shell-tr命令/" data-title="shell-tr命令" data-url="http://yoursite.com/2017/05/02/shell-tr命令/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
