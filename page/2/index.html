@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2017/3 | mgfjx</title>
+    <title>mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta property="og:type" content="website">
 <meta property="og:title" content="mgfjx">
-<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="mgfjx">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mgfjx">
@@ -207,76 +207,147 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main">
+    <article id="post-UIView的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
         <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/22/React-Native笔记/">React-Native笔记</a>
+            <a class="article-title" href="/2017/01/14/UIView的生命周期/">UIView的生命周期</a>
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/03/22/React-Native笔记/">
-            <time datetime="2017-03-22T00:24:39.000Z" itemprop="datePublished">2017-03-22</time>
+        <a href="/2017/01/14/UIView的生命周期/">
+            <time datetime="2017-01-13T16:00:00.000Z" itemprop="datePublished">2017-01-14</time>
         </a>
     </div>
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/React-Native/">React Native</a>
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/iOS/">iOS</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/10/PIL-Python-Image-Library-详解/">PIL(Python Image Library)详解</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/10/PIL-Python-Image-Library-详解/">
-            <time datetime="2017-03-10T03:10:08.000Z" itemprop="datePublished">2017-03-10</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Python/">Python</a>
-    </div>
-
-                </div>
-            </div>
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><blockquote>
+<p>探寻UIView的生命周期。我们知道<code>view</code>的创建有<code>init(或new)</code>的方法，销毁时会自动执行<code>dealloc</code>方法，但是UIView的生命周期到底是怎样的呢？我们一步一步来。</p>
+</blockquote>
+<p>首先新建一个项目并创建一个<code>TestView</code>继承自<code>UIView</code>：<br><img src="http://upload-images.jianshu.io/upload_images/997116-649257745a2750a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建TestView"></p>
+<p>再创建<code>TestViewController</code>继承自UIViewController，用于承载<code>TestView</code>(方便后面测试view销毁时间)：<br><img src="http://upload-images.jianshu.io/upload_images/997116-79f8a42e71ee9463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建TestViewController"><br></p>
+            <p class="article-more-link">
+                <a href="/2017/01/14/UIView的生命周期/#more">查看更多</a>
+            </p>
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://yoursite.com/2017/01/14/UIView的生命周期/" data-id="cj6eusp6c000ajdcbu3jlw75u" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/01/14/UIView的生命周期/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/01/14/UIView的生命周期/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
 </section>
             
                 <aside id="sidebar">

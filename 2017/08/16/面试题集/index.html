@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2017/3 | mgfjx</title>
+    <title>面试题集 | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="mgfjx">
-<meta property="og:url" content="http://yoursite.com/archives/2017/03/index.html">
+    <meta name="description" content="1、单例如何实现？答：单例在ARC和MRC下略有不同，共同需要重写的方法：+ (instancetype)allocWithZone:(struct _NSZone *)zone,- (id)copyWithZone:(NSZone *)zone,- (id)mutableCopyWithZone:(NSZone *)zone. 在MRC还需要重写- (oneway void)release,-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题集">
+<meta property="og:url" content="http://yoursite.com/2017/08/16/面试题集/index.html">
 <meta property="og:site_name" content="mgfjx">
+<meta property="og:description" content="1、单例如何实现？答：单例在ARC和MRC下略有不同，共同需要重写的方法：+ (instancetype)allocWithZone:(struct _NSZone *)zone,- (id)copyWithZone:(NSZone *)zone,- (id)mutableCopyWithZone:(NSZone *)zone. 在MRC还需要重写- (oneway void)release,-">
+<meta property="og:updated_time" content="2017-08-16T10:04:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mgfjx">
+<meta name="twitter:title" content="面试题集">
+<meta name="twitter:description" content="1、单例如何实现？答：单例在ARC和MRC下略有不同，共同需要重写的方法：+ (instancetype)allocWithZone:(struct _NSZone *)zone,- (id)copyWithZone:(NSZone *)zone,- (id)mutableCopyWithZone:(NSZone *)zone. 在MRC还需要重写- (oneway void)release,-">
     
 
     
@@ -207,76 +211,190 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main"><article id="post-面试题集" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/22/React-Native笔记/">React-Native笔记</a>
+        <h1 class="article-title" itemprop="name">
+            面试题集
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/03/22/React-Native笔记/">
-            <time datetime="2017-03-22T00:24:39.000Z" itemprop="datePublished">2017-03-22</time>
+        <a href="/2017/08/16/面试题集/">
+            <time datetime="2017-08-16T06:29:13.000Z" itemprop="datePublished">2017-08-16</time>
         </a>
     </div>
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/React-Native/">React Native</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        
+                        
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/03/10/PIL-Python-Image-Library-详解/">PIL(Python Image Library)详解</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="1、单例如何实现？"><a href="#1、单例如何实现？" class="headerlink" title="1、单例如何实现？"></a>1、单例如何实现？</h3><p>答：单例在<code>ARC</code>和<code>MRC</code>下略有不同，共同需要重写的方法：<code>+ (instancetype)allocWithZone:(struct _NSZone *)zone</code>,<code>- (id)copyWithZone:(NSZone *)zone</code>,<code>- (id)mutableCopyWithZone:(NSZone *)zone</code>. 在<code>MRC</code>还需要重写<code>- (oneway void)release</code>,<code>- (instancetype)retain</code>,<code>- (NSUInteger)retainCount</code>.</p>
+<h3 id="2、对于类方法-静态方法-默认是autorelease，所有类方法都这样吗？"><a href="#2、对于类方法-静态方法-默认是autorelease，所有类方法都这样吗？" class="headerlink" title="2、对于类方法(静态方法)默认是autorelease，所有类方法都这样吗？"></a>2、对于类方法(静态方法)默认是autorelease，所有类方法都这样吗？</h3><p>答：系统自带大多数类方法返回的对象都是经过autorelease.</p>
+<h3 id="3、自动释放池底层怎么实现"><a href="#3、自动释放池底层怎么实现" class="headerlink" title="3、自动释放池底层怎么实现"></a>3、自动释放池底层怎么实现</h3><p>答：自动释放池以栈的形式实现:当你创建一个新的自动释放池时，它将被添加到栈顶。当一个对象收到发送<code>autorelease</code>消息时,它被添加到当前线程的处于栈顶的自动释放池中,当自动释放池被回收时,它们从栈中被删除, 并且会给池子里面所有的对象都会做一次<code>release</code>操作.</p>
+<h3 id="4、KVO内部实现原理"><a href="#4、KVO内部实现原理" class="headerlink" title="4、KVO内部实现原理"></a>4、KVO内部实现原理</h3><p>答：<br>1&gt;    KVO是基于runtime机制实现的.<br>2&gt;    当某个类的对象第一次被观察时， 系统就会在运行期动态地创建该类的一个派生类，在这个派生类中重写基类中任何被观察属性的 setter 方法。<br>派生类在被重写的 setter 方法实现真正的通知机制（Person NSKVONotifying_Person）.</p>
+<h3 id="5、Foundation对象与Core-Foundation对象有什么区别"><a href="#5、Foundation对象与Core-Foundation对象有什么区别" class="headerlink" title="5、Foundation对象与Core Foundation对象有什么区别"></a>5、Foundation对象与Core Foundation对象有什么区别</h3><p>答：<br>1&gt; Foundation对象是OC的，Core Foundation对象是C对象.<br>2&gt; 数据类型之间的转换<br><code>ARC:__bridge_retained、__bridge_transfer</code><br><code>非ARC: __bridge</code></p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/03/10/PIL-Python-Image-Library-详解/">
-            <time datetime="2017-03-10T03:10:08.000Z" itemprop="datePublished">2017-03-10</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Python/">Python</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://yoursite.com/2017/08/16/面试题集/" data-id="cj6eusp6j000hjdcbbol7t6q6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2017/08/16/面试题集/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/08/16/面试题集/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/08/09/GCD笔记/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">GCD笔记</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/08/16/面试题集/" data-title="面试题集" data-url="http://yoursite.com/2017/08/16/面试题集/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
