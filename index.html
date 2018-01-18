@@ -155,11 +155,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                11
+                12
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                5
+                6
                 <span>标签</span>
             </div>
         </div>
@@ -208,6 +208,139 @@
 
             
             <section id="main">
+    <article id="post-iOS-JailBreak-问题收集" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/01/18/iOS-JailBreak-问题收集/">iOS JailBreak 问题收集</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/18/iOS-JailBreak-问题收集/">
+            <time datetime="2018-01-18T02:43:13.000Z" itemprop="datePublished">2018-01-18</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JailBreak/">JailBreak</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="class-dump-执行失败"><a href="#class-dump-执行失败" class="headerlink" title="class-dump 执行失败"></a>class-dump 执行失败</h3><p>问题描述：</p>
+<p>1，在ios逆向工程中，用 class-dump 可以导出App头文件；但是，从App Store 下载的App，都是加密过的，直接用 class-dump ，导出结果只会什么都没有，或者只有一个：CDStructures.h 文件；因此，对于这种情况，首先要做的就是：砸壳；</p>
+<p>2，砸壳工具有：AppCrackr、Clutch、dumpcrypted 等；由于 AppCrackr 、Clutch 暴力砸壳、操作简单，招致公愤，因此一些核心功能，已经下架，在高级系统中，已不能使用；因此，推荐： dumpcrypted  砸壳工具。工具获取及使用方法，参考：<a href="https://github.com/stefanesser/dumpdecrypted" target="_blank" rel="external">https://github.com/stefanesser/dumpdecrypted</a></p>
+<p>3，当砸壳完毕后，将砸壳生成的 <em>*</em>.decrypted 文件拷贝至MAC，之后使用 class-dump 导出头文件即可；</p>
+<p>4，注意：当砸壳完毕后，使用 class-dump 仍然只导出 CDStructures.h 一个文件，则可能架构选择错误；因为 dumpdecrypted 只会砸你手机处理器对应的那个壳，fat binary 的其它部分仍然是有壳的，而 class-dump 的默认目标又不是被砸壳的那个部分，因此很有可能就会报错；</p>
+<p>5，当出现4 中情况时，指定下架构即可，命令示例：class-dump –arch armv7 hello.decrypted -H -o ./heads/</p>
+<p><a href="http://www.voidcn.com/article/p-ralculua-uv.html" target="_blank" rel="external">参考地址</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/" data-id="cjcjw9pur000nc86yxu41kltz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-面试题集" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -256,7 +389,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/08/16/面试题集/" data-id="cj6eusp6j000hjdcbbol7t6q6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/08/16/面试题集/" data-id="cjcjw9pus000qc86ytkmjvzzb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -378,7 +511,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/08/09/GCD笔记/" data-id="cj6eusp5k0000jdcbigsnvie4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/08/09/GCD笔记/" data-id="cjcjw9ptz0004c86yjutp4ge4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -509,7 +642,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/06/09/A-List-Of-macOS-Command-Line/" data-id="cj6eusp5q0002jdcbfbvw8l5z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/06/09/A-List-Of-macOS-Command-Line/" data-id="cjcjw9ptv0003c86yi4fticrh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -643,7 +776,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/05/08/Xcode-tips/" data-id="cj6eusp6f000djdcb2wy182li" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/05/08/Xcode-tips/" data-id="cjcjw9puf000dc86yqcalejfv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -781,7 +914,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/05/02/shell-tr命令/" data-id="cj6eusp6q000mjdcbj4srj9k7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/05/02/shell-tr命令/" data-id="cjcjw9pup000lc86yy520ltgt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -917,7 +1050,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cj6eusp680008jdcby5yfc566" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cjcjw9pu80008c86ycpbqjqvr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1046,7 +1179,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cj6eusp5u0004jdcbjlf3mgp2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cjcjw9pub0009c86y6guav1ik" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1173,7 +1306,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/02/24/swift笔记/" data-id="cj6eusp6s000pjdcbm3eok8dj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/02/24/swift笔记/" data-id="cjcjw9puw000uc86y4y8bg1u3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1294,7 +1427,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="cj6eusp6o000kjdcbvtr8wxqa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/01/23/fuck-shit/" data-id="cjcjw9pun000jc86y6bu3wcge" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1372,141 +1505,6 @@
 
 
 
-    <article id="post-Shell使用小技巧" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/01/18/Shell使用小技巧/">Shell 使用小技巧</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/18/Shell使用小技巧/">
-            <time datetime="2017-01-18T07:28:04.000Z" itemprop="datePublished">2017-01-18</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Shell/">Shell</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/shell/">shell</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h4 id="1、sed-39-s-text-g-39-file"><a href="#1、sed-39-s-text-g-39-file" class="headerlink" title="1、sed &#39;s/}/text}/g&#39; file:"></a>1、<code>sed &#39;s/}/text}/g&#39; file</code>:</h4><p>在文件<code>file</code>文件中的所有<code>}</code>之前添加<code>text</code>文本.<br>例如:<code>NSLog(@&quot;%@&quot;,NSStringFromSelector(_cmd));</code>打印当前方法名</p>
-<p><code>waring</code>:如果遇到<code>sed: RE error: illegal byte sequence</code>, 这是因为在识别含有多字节编码字符时遇到了解析冲突问题, 请在终端执行<code>export LC_COLLATE=&#39;C&#39;</code>和<code>export LC_CTYPE=&#39;C&#39;</code></p>
-<h4 id="2、将文件夹下的所有文件或文件夹按字母分类"><a href="#2、将文件夹下的所有文件或文件夹按字母分类" class="headerlink" title="2、将文件夹下的所有文件或文件夹按字母分类"></a>2、将文件夹下的所有文件或文件夹按字母分类</h4><figure class="highlight ps"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/bash</span></div><div class="line"></div><div class="line">path=<span class="variable">$1</span></div><div class="line">final=$&#123;path: -<span class="number">1</span>&#125;</div><div class="line">echo final : <span class="variable">$final</span></div><div class="line"><span class="keyword">if</span> [[ <span class="string">"$&#123;final&#125;"</span> != <span class="string">"/"</span> ]]; then</div><div class="line">	path=<span class="variable">$path</span>/;</div><div class="line">	echo hehe + <span class="variable">$path</span>;</div><div class="line">fi</div><div class="line">echo <span class="variable">$path</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `ls <span class="variable">$path</span>`;<span class="keyword">do</span></div><div class="line">	subDir=$&#123;file:<span class="number">0</span>:<span class="number">1</span>&#125;;</div><div class="line">	subDir=<span class="string">"$(echo <span class="variable">$subDir</span> | tr '[A-Z]' '[a-z]')"</span></div><div class="line">	dirPath=<span class="variable">$path</span><span class="variable">$subDir</span>;</div><div class="line">	mkdir <span class="variable">$dirPath</span>;</div><div class="line">	cp <span class="variable">$path</span><span class="variable">$file</span> <span class="variable">$dirPath</span>;</div><div class="line">done</div></pre></td></tr></table></figure></p>
-            <p class="article-more-link">
-                <a href="/2017/01/18/Shell使用小技巧/#more">查看更多</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2017/01/18/Shell使用小技巧/" data-id="cj6eusp6a0009jdcba66g9y0x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2017/01/18/Shell使用小技巧/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/01/18/Shell使用小技巧/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1519,6 +1517,25 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/18/iOS-JailBreak-问题收集/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/18/iOS-JailBreak-问题收集/" class="title">iOS JailBreak 问题收集</a></p>
+                            <p class="item-date"><time datetime="2018-01-18T02:43:13.000Z" itemprop="datePublished">2018-01-18</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1596,25 +1613,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/05/02/shell-tr命令/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Shell/">Shell</a></p>
-                            <p class="item-title"><a href="/2017/05/02/shell-tr命令/" class="title">shell-tr命令</a></p>
-                            <p class="item-date"><time datetime="2017-05-02T00:46:29.000Z" itemprop="datePublished">2017-05-02</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1633,7 +1631,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -1642,7 +1640,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JailBreak/">JailBreak</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -1651,7 +1649,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/React-Native/" style="font-size: 10px;">React Native</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a>
+            <a href="/tags/JailBreak/" style="font-size: 10px;">JailBreak</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/React-Native/" style="font-size: 10px;">React Native</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a>
         </div>
     </div>
 
@@ -1679,7 +1677,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2017 mgfjxxiexiaolong<br>
+            &copy; 2018 mgfjxxiexiaolong<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>

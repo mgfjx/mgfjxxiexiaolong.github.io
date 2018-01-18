@@ -3,15 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>改网页无法正常显示！请稍后再试！ | mgfjx</title>
+    <title>iOS JailBreak 问题收集 | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="改网页无法正常显示！请稍后再试！">
-<meta property="og:url" content="http://yoursite.com/404/index.html">
+    <meta name="description" content="class-dump 执行失败问题描述：
+1，在ios逆向工程中，用 class-dump 可以导出App头文件；但是，从App Store 下载的App，都是加密过的，直接用 class-dump ，导出结果只会什么都没有，或者只有一个：CDStructures.h 文件；因此，对于这种情况，首先要做的就是：砸壳；
+2，砸壳工具有：AppCrackr、Clutch、dumpcrypted 等；由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS JailBreak 问题收集">
+<meta property="og:url" content="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/index.html">
 <meta property="og:site_name" content="mgfjx">
-<meta property="og:updated_time" content="2017-01-17T08:55:06.000Z">
+<meta property="og:description" content="class-dump 执行失败问题描述：
+1，在ios逆向工程中，用 class-dump 可以导出App头文件；但是，从App Store 下载的App，都是加密过的，直接用 class-dump ，导出结果只会什么都没有，或者只有一个：CDStructures.h 文件；因此，对于这种情况，首先要做的就是：砸壳；
+2，砸壳工具有：AppCrackr、Clutch、dumpcrypted 等；由">
+<meta property="og:updated_time" content="2018-01-18T02:45:08.207Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="改网页无法正常显示！请稍后再试！">
+<meta name="twitter:title" content="iOS JailBreak 问题收集">
+<meta name="twitter:description" content="class-dump 执行失败问题描述：
+1，在ios逆向工程中，用 class-dump 可以导出App头文件；但是，从App Store 下载的App，都是加密过的，直接用 class-dump ，导出结果只会什么都没有，或者只有一个：CDStructures.h 文件；因此，对于这种情况，首先要做的就是：砸壳；
+2，砸壳工具有：AppCrackr、Clutch、dumpcrypted 等；由">
     
 
     
@@ -208,7 +217,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-iOS-JailBreak-问题收集" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -216,10 +225,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            改网页无法正常显示！请稍后再试！
+            iOS JailBreak 问题收集
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/01/18/iOS-JailBreak-问题收集/">
+            <time datetime="2018-01-18T02:43:13.000Z" itemprop="datePublished">2018-01-18</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JailBreak/">JailBreak</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -227,7 +255,14 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <h3 id="class-dump-执行失败"><a href="#class-dump-执行失败" class="headerlink" title="class-dump 执行失败"></a>class-dump 执行失败</h3><p>问题描述：</p>
+<p>1，在ios逆向工程中，用 class-dump 可以导出App头文件；但是，从App Store 下载的App，都是加密过的，直接用 class-dump ，导出结果只会什么都没有，或者只有一个：CDStructures.h 文件；因此，对于这种情况，首先要做的就是：砸壳；</p>
+<p>2，砸壳工具有：AppCrackr、Clutch、dumpcrypted 等；由于 AppCrackr 、Clutch 暴力砸壳、操作简单，招致公愤，因此一些核心功能，已经下架，在高级系统中，已不能使用；因此，推荐： dumpcrypted  砸壳工具。工具获取及使用方法，参考：<a href="https://github.com/stefanesser/dumpdecrypted" target="_blank" rel="external">https://github.com/stefanesser/dumpdecrypted</a></p>
+<p>3，当砸壳完毕后，将砸壳生成的 <em>*</em>.decrypted 文件拷贝至MAC，之后使用 class-dump 导出头文件即可；</p>
+<p>4，注意：当砸壳完毕后，使用 class-dump 仍然只导出 CDStructures.h 一个文件，则可能架构选择错误；因为 dumpdecrypted 只会砸你手机处理器对应的那个壳，fat binary 的其它部分仍然是有壳的，而 class-dump 的默认目标又不是被砸壳的那个部分，因此很有可能就会报错；</p>
+<p>5，当出现4 中情况时，指定下架构即可，命令示例：class-dump –arch armv7 hello.decrypted -H -o ./heads/</p>
+<p><a href="http://www.voidcn.com/article/p-ralculua-uv.html" target="_blank" rel="external">参考地址</a></p>
+
         
         </div>
         <footer class="article-footer">
@@ -237,7 +272,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/404/index.html" data-id="cjcjw9psv0000c86y2w2zov53" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/" data-id="cjcjw9pur000nc86yxu41kltz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -305,13 +340,23 @@
 
             
     
-        <a href="http://yoursite.com/404/index.html#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/404/index.html">评论</a>
+        <a href="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/">评论</a>
     
 
         </footer>
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2017/08/16/面试题集/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">面试题集</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -321,7 +366,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="404/index.html" data-title="改网页无法正常显示！请稍后再试！" data-url="http://yoursite.com/404/index.html"></div>
+    <div class="ds-thread" data-thread-key="2018/01/18/iOS-JailBreak-问题收集/" data-title="iOS JailBreak 问题收集" data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
