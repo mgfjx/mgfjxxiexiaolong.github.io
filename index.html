@@ -155,7 +155,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                13
+                14
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -208,6 +208,128 @@
 
             
             <section id="main">
+    <article id="post-Cycript用法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/01/Cycript用法/">Cycript用法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/01/Cycript用法/">
+            <time datetime="2018-02-01T01:02:58.000Z" itemprop="datePublished">2018-02-01</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="1-打印当前视图层次结构"><a href="#1-打印当前视图层次结构" class="headerlink" title="1. 打印当前视图层次结构"></a>1. 打印当前视图层次结构</h3><p><code>UIApp.keyWindow.recursiveDescription().toString()</code></p>
+<h3 id="2-获取对象属性"><a href="#2-获取对象属性" class="headerlink" title="2. 获取对象属性"></a>2. 获取对象属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function tryPrintIvars(a)&#123; </div><div class="line">	var x=&#123;&#125;; </div><div class="line">	for(i in *a)&#123; </div><div class="line">		try&#123; </div><div class="line">			x[i] = (*a)[i]; </div><div class="line">		&#125; catch(e)&#123;&#125; </div><div class="line">	&#125; </div><div class="line">	return x; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/02/01/Cycript用法/" data-id="cjdctx3qq0003x66yaj0rsg11" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/02/01/Cycript用法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2018/02/01/Cycript用法/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-jailbreak-tools合集" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -262,7 +384,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/01/30/jailbreak-tools合集/" data-id="cjd18n76o000l0f6yiw2s16k5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/01/30/jailbreak-tools合集/" data-id="cjdctx3rk000nx66ytcx03m05" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -385,6 +507,7 @@
 <p>4，注意：当砸壳完毕后，使用 class-dump 仍然只导出 CDStructures.h 一个文件，则可能架构选择错误；因为 dumpdecrypted 只会砸你手机处理器对应的那个壳，fat binary 的其它部分仍然是有壳的，而 class-dump 的默认目标又不是被砸壳的那个部分，因此很有可能就会报错；</p>
 <p>5，当出现4 中情况时，指定下架构即可，命令示例：class-dump –arch armv7 hello.decrypted -H -o ./heads/</p>
 <p><a href="http://www.voidcn.com/article/p-ralculua-uv.html" target="_blank" rel="external">参考地址</a></p>
+<h3 id="apple’s-default-applications-bundle-identifier"><a href="#apple’s-default-applications-bundle-identifier" class="headerlink" title="apple’s default applications bundle identifier"></a>apple’s default applications bundle identifier</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">This is the verified list as of iOS 9.3:</div><div class="line"></div><div class="line">App Store - com.apple.AppStore</div><div class="line">Calculator - com.apple.calculator</div><div class="line">Calendar - com.apple.mobilecal</div><div class="line">Camera - com.apple.camera</div><div class="line">Clock - com.apple.mobiletimer</div><div class="line">Compass - com.apple.compass</div><div class="line">Contacts - com.apple.MobileAddressBook</div><div class="line">FaceTime - com.apple.facetime</div><div class="line">Find Friends - com.apple.mobileme.fmf1</div><div class="line">Find iPhone - com.apple.mobileme.fmip1</div><div class="line">Game Center - com.apple.gamecenter</div><div class="line">Health - com.apple.Health</div><div class="line">iBooks - com.apple.iBooks</div><div class="line">iTunes Store - com.apple.MobileStore</div><div class="line">Mail - com.apple.mobilemail</div><div class="line">Maps - com.apple.Maps</div><div class="line">Messages - com.apple.MobileSMS</div><div class="line">Music - com.apple.Music</div><div class="line">News - com.apple.news</div><div class="line">Notes - com.apple.mobilenotes</div><div class="line">Phone - com.apple.mobilephone</div><div class="line">Photos - com.apple.mobileslideshow</div><div class="line">Podcasts - com.apple.podcasts</div><div class="line">Reminders - com.apple.reminders</div><div class="line">Safari - com.apple.mobilesafari</div><div class="line">Settings - com.apple.Preferences</div><div class="line">Stocks - com.apple.stocks</div><div class="line">Tips - com.apple.tips</div><div class="line">Videos - com.apple.videos</div><div class="line">Voice Memos - com.apple.VoiceMemos</div><div class="line">Wallet - com.apple.Passbook</div><div class="line">Watch - com.apple.Bridge</div><div class="line">Weather - com.apple.weather</div></pre></td></tr></table></figure>
 
         
         </div>
@@ -395,7 +518,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/" data-id="cjd18n76l000j0f6yg43x52jl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/" data-id="cjdctx3ri000lx66yoashzted" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -521,7 +644,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/08/16/面试题集/" data-id="cjd18n77t00110f6y0ze4zibl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/08/16/面试题集/" data-id="cjdctx3rp000tx66y8x718jwm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -643,7 +766,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/08/09/GCD笔记/" data-id="cjd18n75v00020f6y39acz9l9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/08/09/GCD笔记/" data-id="cjdctx3qw0006x66y72utlevi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -774,7 +897,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/06/09/A-List-Of-macOS-Command-Line/" data-id="cjd18n75q00010f6y4td7hhu3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/06/09/A-List-Of-macOS-Command-Line/" data-id="cjdctx3qh0001x66yzwkcx47z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -908,7 +1031,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/05/08/Xcode-tips/" data-id="cjd18n76f000d0f6ypye98hj3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/05/08/Xcode-tips/" data-id="cjdctx3r9000dx66ybqq3bfsk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1046,7 +1169,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/05/02/shell-tr命令/" data-id="cjd18n76r000o0f6ybcicm00v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/05/02/shell-tr命令/" data-id="cjdctx3rn000qx66y6jd7v7fw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1182,7 +1305,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cjd18n76500060f6ytfvvviem" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/03/22/React-Native笔记/" data-id="cjdctx3r00008x66ydg5m4nmz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1311,7 +1434,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cjd18n76300050f6ydhi2asiz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2017/03/10/PIL-Python-Image-Library-详解/" data-id="cjdctx3qz0007x66yw5bt1km4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1389,133 +1512,6 @@
 
 
 
-    <article id="post-swift笔记" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/02/24/swift笔记/">swift笔记</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/02/24/swift笔记/">
-            <time datetime="2017-02-24T07:29:22.000Z" itemprop="datePublished">2017-02-24</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h5 id="1-打印方法名称"><a href="#1-打印方法名称" class="headerlink" title="1.打印方法名称"></a>1.打印方法名称</h5><p><code>print(#function);</code> <em>swift3.0 or later</em>(之前为<code>__FUNCTION__</code>)</p>
-<hr>
-<h5 id="2-swift使用block-闭包-回调"><a href="#2-swift使用block-闭包-回调" class="headerlink" title="2.swift使用block(闭包)回调"></a>2.swift使用block(闭包)回调</h5><p>先声明闭包<code>typealias ScanFinish = (_ finish:Bool)-&gt;Void;</code><br>再设置闭包函数为属性<code>var block:ScanFinish?;</code>,然后在初始化是赋值闭包属性就行了</p>
-<hr>
-<h5 id="3-escaping-逃逸闭包"><a href="#3-escaping-逃逸闭包" class="headerlink" title="3.@escaping 逃逸闭包"></a>3.@escaping 逃逸闭包</h5><p>swift3.0总取消了<code>@noescapting</code>(非逃逸闭包)，改为了<code>@escaping</code>(逃逸闭包)，区别：即闭包在<code>函数内</code>执行为非逃逸闭包，在<code>函数外</code>为逃逸闭包，在函数外执行需要<code>@escaping</code>修饰，例如：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typealias</span> <span class="type">ScanFinish</span> = (<span class="number">_</span> finish:<span class="type">Bool</span>)-&gt;<span class="type">Void</span>;</div><div class="line"><span class="keyword">init</span>(scanFinish: @escaping <span class="type">ScanFinish</span>) &#123;</div><div class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(nibName: <span class="literal">nil</span>, bundle: <span class="literal">nil</span>);</div><div class="line">        <span class="keyword">self</span>.block = scanFinish;<span class="comment">//逃逸闭包</span></div><div class="line">        scanFinish(ture);<span class="comment">//非逃逸闭包</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p></p>
-            <p class="article-more-link">
-                <a href="/2017/02/24/swift笔记/#more">查看更多</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2017/02/24/swift笔记/" data-id="cjd18n76v000r0f6y4poyjxsg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2017/02/24/swift笔记/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2017/02/24/swift笔记/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1528,6 +1524,25 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/02/01/Cycript用法/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/02/01/Cycript用法/" class="title">Cycript用法</a></p>
+                            <p class="item-date"><time datetime="2018-02-01T01:02:58.000Z" itemprop="datePublished">2018-02-01</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1605,25 +1620,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/06/09/A-List-Of-macOS-Command-Line/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Shell/">Shell</a></p>
-                            <p class="item-title"><a href="/2017/06/09/A-List-Of-macOS-Command-Line/" class="title">A List Of macOS Command Line</a></p>
-                            <p class="item-date"><time datetime="2017-06-09T02:22:04.000Z" itemprop="datePublished">2017-06-09</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1642,7 +1638,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 

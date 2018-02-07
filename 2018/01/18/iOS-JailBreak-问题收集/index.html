@@ -15,7 +15,7 @@
 <meta property="og:description" content="class-dump 执行失败问题描述：
 1，在ios逆向工程中，用 class-dump 可以导出App头文件；但是，从App Store 下载的App，都是加密过的，直接用 class-dump ，导出结果只会什么都没有，或者只有一个：CDStructures.h 文件；因此，对于这种情况，首先要做的就是：砸壳；
 2，砸壳工具有：AppCrackr、Clutch、dumpcrypted 等；由">
-<meta property="og:updated_time" content="2018-01-18T02:45:08.207Z">
+<meta property="og:updated_time" content="2018-02-07T08:45:15.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS JailBreak 问题收集">
 <meta name="twitter:description" content="class-dump 执行失败问题描述：
@@ -165,7 +165,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                13
+                14
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -262,6 +262,7 @@
 <p>4，注意：当砸壳完毕后，使用 class-dump 仍然只导出 CDStructures.h 一个文件，则可能架构选择错误；因为 dumpdecrypted 只会砸你手机处理器对应的那个壳，fat binary 的其它部分仍然是有壳的，而 class-dump 的默认目标又不是被砸壳的那个部分，因此很有可能就会报错；</p>
 <p>5，当出现4 中情况时，指定下架构即可，命令示例：class-dump –arch armv7 hello.decrypted -H -o ./heads/</p>
 <p><a href="http://www.voidcn.com/article/p-ralculua-uv.html" target="_blank" rel="external">参考地址</a></p>
+<h3 id="apple’s-default-applications-bundle-identifier"><a href="#apple’s-default-applications-bundle-identifier" class="headerlink" title="apple’s default applications bundle identifier"></a>apple’s default applications bundle identifier</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">This is the verified list as of iOS 9.3:</div><div class="line"></div><div class="line">App Store - com.apple.AppStore</div><div class="line">Calculator - com.apple.calculator</div><div class="line">Calendar - com.apple.mobilecal</div><div class="line">Camera - com.apple.camera</div><div class="line">Clock - com.apple.mobiletimer</div><div class="line">Compass - com.apple.compass</div><div class="line">Contacts - com.apple.MobileAddressBook</div><div class="line">FaceTime - com.apple.facetime</div><div class="line">Find Friends - com.apple.mobileme.fmf1</div><div class="line">Find iPhone - com.apple.mobileme.fmip1</div><div class="line">Game Center - com.apple.gamecenter</div><div class="line">Health - com.apple.Health</div><div class="line">iBooks - com.apple.iBooks</div><div class="line">iTunes Store - com.apple.MobileStore</div><div class="line">Mail - com.apple.mobilemail</div><div class="line">Maps - com.apple.Maps</div><div class="line">Messages - com.apple.MobileSMS</div><div class="line">Music - com.apple.Music</div><div class="line">News - com.apple.news</div><div class="line">Notes - com.apple.mobilenotes</div><div class="line">Phone - com.apple.mobilephone</div><div class="line">Photos - com.apple.mobileslideshow</div><div class="line">Podcasts - com.apple.podcasts</div><div class="line">Reminders - com.apple.reminders</div><div class="line">Safari - com.apple.mobilesafari</div><div class="line">Settings - com.apple.Preferences</div><div class="line">Stocks - com.apple.stocks</div><div class="line">Tips - com.apple.tips</div><div class="line">Videos - com.apple.videos</div><div class="line">Voice Memos - com.apple.VoiceMemos</div><div class="line">Wallet - com.apple.Passbook</div><div class="line">Watch - com.apple.Bridge</div><div class="line">Weather - com.apple.weather</div></pre></td></tr></table></figure>
 
         
         </div>
@@ -272,7 +273,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/" data-id="cjd18n76l000j0f6yg43x52jl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/01/18/iOS-JailBreak-问题收集/" data-id="cjdctx3ri000lx66yoashzted" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -430,6 +431,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/02/01/Cycript用法/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/02/01/Cycript用法/" class="title">Cycript用法</a></p>
+                            <p class="item-date"><time datetime="2018-02-01T01:02:58.000Z" itemprop="datePublished">2018-02-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/01/30/jailbreak-tools合集/" class="thumbnail">
     
     
@@ -503,25 +523,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/06/09/A-List-Of-macOS-Command-Line/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Shell/">Shell</a></p>
-                            <p class="item-title"><a href="/2017/06/09/A-List-Of-macOS-Command-Line/" class="title">A List Of macOS Command Line</a></p>
-                            <p class="item-date"><time datetime="2017-06-09T02:22:04.000Z" itemprop="datePublished">2017-06-09</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -540,7 +541,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 

@@ -3,14 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: Xcode | mgfjx</title>
+    <title>Cycript用法 | mgfjx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="mgfjx">
-<meta property="og:url" content="http://yoursite.com/categories/Xcode/index.html">
+    <meta name="description" content="1. 打印当前视图层次结构UIApp.keyWindow.recursiveDescription().toString()
+2. 获取对象属性123456789function tryPrintIvars(a)&amp;#123; 	var x=&amp;#123;&amp;#125;; 	for(i in *a)&amp;#123; 		try&amp;#123; 			x[i] = (*a)[i]; 		&amp;#125; catch(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cycript用法">
+<meta property="og:url" content="http://yoursite.com/2018/02/01/Cycript用法/index.html">
 <meta property="og:site_name" content="mgfjx">
+<meta property="og:description" content="1. 打印当前视图层次结构UIApp.keyWindow.recursiveDescription().toString()
+2. 获取对象属性123456789function tryPrintIvars(a)&amp;#123; 	var x=&amp;#123;&amp;#125;; 	for(i in *a)&amp;#123; 		try&amp;#123; 			x[i] = (*a)[i]; 		&amp;#125; catch(">
+<meta property="og:updated_time" content="2018-02-01T02:59:06.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mgfjx">
+<meta name="twitter:title" content="Cycript用法">
+<meta name="twitter:description" content="1. 打印当前视图层次结构UIApp.keyWindow.recursiveDescription().toString()
+2. 获取对象属性123456789function tryPrintIvars(a)&amp;#123; 	var x=&amp;#123;&amp;#125;; 	for(i in *a)&amp;#123; 		try&amp;#123; 			x[i] = (*a)[i]; 		&amp;#125; catch(">
     
 
     
@@ -207,50 +214,186 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">Xcode</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-Cycript用法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/05/08/Xcode-tips/">Xcode tips</a>
+        <h1 class="article-title" itemprop="name">
+            Cycript用法
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/05/08/Xcode-tips/">
-            <time datetime="2017-05-08T06:00:04.000Z" itemprop="datePublished">2017-05-08</time>
+        <a href="/2018/02/01/Cycript用法/">
+            <time datetime="2018-02-01T01:02:58.000Z" itemprop="datePublished">2018-02-01</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Xcode/">Xcode</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Xcode/">Xcode</a>
-    </div>
-
-                </div>
-            </div>
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="1-打印当前视图层次结构"><a href="#1-打印当前视图层次结构" class="headerlink" title="1. 打印当前视图层次结构"></a>1. 打印当前视图层次结构</h3><p><code>UIApp.keyWindow.recursiveDescription().toString()</code></p>
+<h3 id="2-获取对象属性"><a href="#2-获取对象属性" class="headerlink" title="2. 获取对象属性"></a>2. 获取对象属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function tryPrintIvars(a)&#123; </div><div class="line">	var x=&#123;&#125;; </div><div class="line">	for(i in *a)&#123; </div><div class="line">		try&#123; </div><div class="line">			x[i] = (*a)[i]; </div><div class="line">		&#125; catch(e)&#123;&#125; </div><div class="line">	&#125; </div><div class="line">	return x; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://yoursite.com/2018/02/01/Cycript用法/" data-id="cjdctx3qq0003x66yaj0rsg11" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/02/01/Cycript用法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://yoursite.com/2018/02/01/Cycript用法/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/01/30/jailbreak-tools合集/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">jailbreak tools合集</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2018/02/01/Cycript用法/" data-title="Cycript用法" data-url="http://yoursite.com/2018/02/01/Cycript用法/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
